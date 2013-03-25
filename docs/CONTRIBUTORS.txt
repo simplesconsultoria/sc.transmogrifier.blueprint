@@ -8,4 +8,5 @@ Credits
 ------------
 
     * Leonardo Rochael Almeida, author
+    * Joao S. O. Bueno, author
     * Erico Andrei, packaging

@@ -3,16 +3,16 @@ from setuptools import setup, find_packages
 
 import os
 
-version = '0.3.dev0'
+version = '0.4.dev0'
 
 long_description = (open("README.rst").read() + "\n" +
                     open(os.path.join("docs", "CONTRIBUTORS.txt")).read() + "\n" +
                     open(os.path.join("docs", "CHANGES.txt")).read())
 
-setup(name='sc.transmogrifier',
+setup(name='sc.transmogrifier.blueprint',
       version=version,
-      description="""A blueprint for collective.transmogrifier for adding
-                     redirections""",
+      description=""" Code for using in a transmogrifier toolchain, including
+                      several blueprints""",
       long_description=long_description,
       classifiers=[
           "Environment :: Web Environment",
@@ -26,13 +26,13 @@ setup(name='sc.transmogrifier',
           "Programming Language :: Python"
       ],
       keywords='transmogrifier blueprint plone simplesconsultoria',
-      author='Leonardo Rochael Almeida',
-      author_email='LeoRochael@gmail.com',
-      url='http://github.com/simplesconsultoria/sc.transmogrifier',
+      author='Leonardo Rochael Almeida, João S. O. Bueno',
+      author_email='LeoRochael@gmail.com, jsobueno@gmail.com',
+      url='http://github.com/simplesconsultoria/sc.transmogrifier.blueprint',
       license='gpl',
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      namespace_packages=['sc'],
+      namespace_packages=['sc', 'sc.transmogrifier'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[

@@ -60,10 +60,10 @@ class TransmogrifyRedirectorLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
-        import sc.transmogrifier
+        import sc.transmogrifier.blueprint
         xmlconfig.file('configure.zcml',
                        sc.transmogrifier, context=configurationContext)
-        import collective.transmogrifier
+        import collective.transmogrifier.blueprint
         xmlconfig.file('configure.zcml',
                        collective.transmogrifier, context=configurationContext)
 
@@ -99,13 +99,13 @@ class TestTransmogrify(TestCase):
         self.new_path = portal_path + '/' + NEW_NAME
         # capture all the logs of the pipeline section
         self.handler = logging.handlers.BufferingHandler(sys.maxint)
-        from sc.transmogrifier.redirector import log
+        from sc.transmogrifier.blueprint.redirector import log
         log.addHandler(self.handler)
         self._old_log_level = log.level
         log.setLevel(1)
 
     def tearDown(self):
-        from sc.transmogrifier.redirector import log
+        from sc.transmogrifier.blueprint.redirector import log
         log.removeHandler(self.handler)
         self.handler.flush()
         log.level = self._old_log_level

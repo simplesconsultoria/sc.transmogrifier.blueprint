@@ -22,7 +22,7 @@ Installation
 
 To enable this product,on a buildout based installation:
 
-    1. Edit your buildout.cfg and add ``sc.transmogrifier``
+    1. Edit your buildout.cfg and add ``sc.transmogrifier.blueprint``
        to the list of eggs to install ::
 
         [buildout]
